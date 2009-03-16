@@ -1,0 +1,11 @@
+##############################
+django-application-manager
+##############################
+ 
+A tool designed to let site admins and users manage what applications they are currently using.
+Contents:
+ 
+.. toctree::
+ 
+   install.txt
+   usage.txt

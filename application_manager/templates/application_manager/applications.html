@@ -1,0 +1,36 @@
+{% comment %}
+    This is a very simple and ugly preview of how we might display 
+
+{% endcomment %}
+
+<div class="ApplicationManager">
+    <dl>
+    {% for app in applications %}
+        <dt style="{% if app.activated %}font-weight: bold;{% endif %}">
+            {% if app.activated %}
+                <a href="{% url application_deactivate app.id %}?next={{ request.path }}">disable</a>
+            {% else %}
+                <a href="{% url application_activate app.id %}?next={{ request.path }}">enable</a>            
+            {% endif %}
+            <a href="{{ app.url_name }}">{{ app.title }}</a>
+        </dt>
+        <dd>{{ app.description }}</dd>
+        {% if app.activated %}                
+            {% if app.items %}
+            <dd>
+                {% for item in app.items %}
+                    <a href="{{ item.url }}" title="{{ item.description }}">{{ item.title }}</a><br />
+                {% endfor %}
+            </dd>
+            {% endif %}
+            {% if app.link_list %}    
+            <dd>
+                {% for link in app.link_list %}
+                    <a href="{{ link.href }}" title="{{ link.description }}">{{ link.title }}</a><br />
+                {% endfor %}
+            </dd>    
+            {% endif %}
+        {% endif%}
+    {% endfor %}
+    </dl>
+</div>
