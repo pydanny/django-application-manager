@@ -75,8 +75,8 @@ This describes where the title for samples is stored.
 item_description_doc = """
 This describes where the description or tease is displayed.
 <blockquote>
-    <strong>Blog:</strong> note<br />
-    <strong>Bookmarks:</strong> tease<br />
+    <strong>Blog:</strong> tease<br />
+    <strong>Bookmarks:</strong> note<br />
 </blockquote>
 """
 
