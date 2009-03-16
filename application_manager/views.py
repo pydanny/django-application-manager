@@ -85,8 +85,10 @@ def get_applications(request):
             item.url = item_url
             
             # now set the item title and description
-            item.title = item.__dict__[application.item_title]
-            item.description = item.__dict__[application.item_description]            
+            error_msg = "Item title not set correctly for %s in admin/application_manager" % application.title            
+            item.title = item.__dict__.get(application.item_title,error_msg)
+            error_msg = "Item description not set correctly for %s in admin/application_manager" % application.title
+            item.description = item.__dict__.get(application.item_description,error_msg)
         
         application.items = items  
         

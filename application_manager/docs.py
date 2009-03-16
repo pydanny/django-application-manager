@@ -83,8 +83,8 @@ This describes where the description or tease is displayed.
 url_name_doc = """
 Enter url names as set in urls.py:
 <blockquote>
-    <strong>Blog:</strong> blog_list_all<br />
-    <strong>Bookmarks:</strong> all_bookmarks<br />
+    <strong>Blog:</strong> blog_new<br />
+    <strong>Bookmarks:</strong> add_bookmark<br />
 </blockquote>
 
 """
@@ -92,15 +92,15 @@ Enter url names as set in urls.py:
 applink_title_doc ="""
 Enter a human readable title:
 <blockquote>
-    <strong>Blog:</strong> All Blogs<br />
-    <strong>Bookmarks:</strong> All Bookmarks<br />
+    <strong>Blog:</strong> Add blog entry<br />
+    <strong>Bookmarks:</strong> Add Bookmark<br />
 </blockquote>
 """
 
 applink_description_doc = """
 <blockquote>
-    <strong>Blog:</strong> All blogs in this site.<br />
-    <strong>Bookmarks:</strong> All bookmarks in this site.<br />
+    <strong>Blog:</strong> Submit a blog entry.<br />
+    <strong>Bookmarks:</strong> Add a bookmark to this site.<br />
 </blockquote>
 """
 
