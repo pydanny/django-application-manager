@@ -16,12 +16,12 @@ class Application(models.Model):
     # This section handles sample items displayed in Application manager's interface
     # These sample items are called 'items' for the sake of clarity and simplicity
     user_lookup_name = models.CharField(_("user lookup name"), help_text=_(user_lookup_name_doc) ,max_length=20, unique=False) 
-    package_identifier = models.CharField(_("package identifier"), help_text=_("This is the application module name. So the Pinax bookmarks app would be simply <strong>bookmarks</strong>.") ,max_length=100, unique=True) 
-    model_identifier = models.CharField(_("model identifier"), help_text=_("This is the application model name. So the Pinax bookmarks BookmarkInstance model would be simply <strong>BookmarkInstance</strong>.") ,max_length=100)     
-    sample_limit = models.IntegerField(_("sample limit"), help_text=_("This is how many sample items should be displayed"))     
-    item_url = models.CharField(_("item url"), max_length=100, help_text=_("This describes where the link is stored. So for bookmarks, it would be <strong>bookmark.url</strong>."))
-    item_title = models.CharField(_("item title"), max_length=100, help_text=_("This describes where the title is displayed. The bookmark example oddly enough is <strong>description</strong>."))    
-    item_description = models.CharField(_("item description"), max_length=100, help_text=_("This describes where the description is displayed. The bookmark example oddly enough is <strong>note</strong>."))
+    package_identifier = models.CharField(_("package identifier"), help_text=_(package_identifier_doc) ,max_length=100, unique=True) 
+    model_identifier = models.CharField(_("model identifier"), help_text=_(model_identifier_doc) ,max_length=100)     
+    sample_limit = models.IntegerField(_("sample limit"), help_text=_(sample_limit_doc))     
+    item_url = models.CharField(_("item url"), max_length=100, help_text=_(item_url_doc))
+    item_title = models.CharField(_("item title"), max_length=100, help_text=_(item_title_doc))    
+    item_description = models.CharField(_("item description"), max_length=100, help_text=_(item_description_doc))
 
 
     def __unicode__(self):
@@ -33,10 +33,10 @@ class Application(models.Model):
         
 class ApplicationLink(models.Model):
     
-    application = models.ForeignKey(Application, related_name="application_link", verbose_name=_('applications'))
-    url_name = models.CharField(_("url name"), help_text=_("Enter url names.<br />Example: Bookmarks might include <strong>all_bookmarks</strong> and <strong>your_bookmarks</strong>.") ,max_length=100, unique=True) 
-    title = models.CharField(_('title'), help_text=_("Your application link's name.<br />Example: Bookmakrs might include <strong>all bookmarks</strong> and <strong>your bookmarks</strong>"), max_length=100)
-    description = models.TextField(_("description"), null=True, blank=True)
+    application = models.ForeignKey(Application, help_text=_("Our sample cases are based off the ones in the Application model."), related_name="application_link", verbose_name=_('applications'))
+    url_name = models.CharField(_("url name"), help_text=_(url_name_doc) ,max_length=100, unique=True) 
+    title = models.CharField(_('title'), help_text=_(applink_title_doc), max_length=100)
+    description = models.TextField(_("description"), help_text=_(applink_description_doc), null=True, blank=True)
 
 
     def __unicode__(self):

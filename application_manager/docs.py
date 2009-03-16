@@ -33,10 +33,81 @@ This is taken from the ForeignKey field from the object to the User object.
 </blockquote>
 """
 
+package_identifier_doc ="""
+This is the application module name.
+<blockquote>
+    <strong>Blog:</strong> blog<br />
+    <strong>Bookmarks:</strong> bookmarks
+</blockquote>
+"""
+
+model_identifier_doc = """
+This is the application model name.
+<blockquote>
+    <strong>Blog:</strong> Post<br />
+    <strong>Bookmarks:</strong> BookmarkInstance<br />
+</blockquote>
+"""
+
+sample_limit_doc = """
+This shows how many samples of a particular type to display.<br />
+A good number is 0-3 items and we might replace the text field with a
+numerical select widget.
+"""
+
+item_url_doc = """
+This describes the attribute or method where the link to a sample is fetched from.<br />
+In most cases you can just use get_absolute_url. 
+<blockquote>
+    <strong>Blog:</strong> get_absolute_url<br />
+    <strong>Bookmarks:</strong> bookmark.url<br />
+</blockquote>
+"""
+
+item_title_doc = """
+This describes where the title for samples is stored.
+<blockquote>
+    <strong>Blog:</strong> title<br />
+    <strong>Bookmarks:</strong> description<br />
+</blockquote>
+"""
+
+item_description_doc = """
+This describes where the description or tease is displayed.
+<blockquote>
+    <strong>Blog:</strong> note<br />
+    <strong>Bookmarks:</strong> tease<br />
+</blockquote>
+"""
+
+url_name_doc = """
+Enter url names as set in urls.py:
+<blockquote>
+    <strong>Blog:</strong> blog_list_all<br />
+    <strong>Bookmarks:</strong> all_bookmarks<br />
+</blockquote>
+
+"""
+
+applink_title_doc ="""
+Enter a human readable title:
+<blockquote>
+    <strong>Blog:</strong> All Blogs<br />
+    <strong>Bookmarks:</strong> All Bookmarks<br />
+</blockquote>
+"""
+
+applink_description_doc = """
+<blockquote>
+    <strong>Blog:</strong> All blogs in this site.<br />
+    <strong>Bookmarks:</strong> All bookmarks in this site.<br />
+</blockquote>
+"""
+
 base = """
 <blockquote>
-    <strong>Blog:</strong> 
-    <strong>Bookmarks:</strong> 
+    <strong>Blog:</strong> xyz<br />
+    <strong>Bookmarks:</strong> xyz<br />
 </blockquote>
 
 """
