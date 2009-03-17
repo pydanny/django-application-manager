@@ -1,6 +1,5 @@
 from django import template
 from django.core.urlresolvers import reverse
-from django.template.defaultfilters import slugify
 
 from application_manager.models import Application
 
@@ -17,7 +16,7 @@ def nav_links(user):
     for application in applications:
         if application in user_applications:
             application.master_url_name = reverse(application.master_url_name)
-            application.css_slug = slugify(application.title)
+            application.css_slug = application.package_identifier
             display_applications.append(application)
             
     return {'applications':display_applications}
