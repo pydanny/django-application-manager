@@ -12,7 +12,6 @@ TODO
 =======
 
  * convert from DL to UL
- * Improve the model docs since that will heavily drive usability of this application.
  * Template tag for displaying a user's list of applications.
  * Provide a list of approved applications that would work in Application Manager.
  * Integrate sites functionality with this application.
