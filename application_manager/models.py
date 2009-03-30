@@ -2,7 +2,7 @@ from django.contrib.auth.models import User
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from application_manager.docs import *
+from application_manager.model_docs import *
 
 
 class Application(models.Model):
