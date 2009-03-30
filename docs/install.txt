@@ -1,0 +1,40 @@
+Installing the latest development version of django-application-manager
+-----------------------------------------------------------------------
+
+To install, first check out the latest version of the application from
+subversion:
+
+    svn co http://django-application-manager.googlecode.com/svn/trunk django-application-manager
+
+Now, link the inner ``application_manager`` project to your Python path:
+
+    sudo ln -s `pwd`/application_manager SITE_PACKAGES_DIR/application_manager
+
+If you don't know the location of your site packages directory, this hack might
+do the trick for you::
+
+    sudo ln -s `pwd`/application_manager `python -c "from distutils.sysconfig import get_python_lib; print get_python_lib()"`/application_manager
+    
+Now it's installed!  Please see usage.txt for information on how to use this
+application in your projects.
+
+Installing via setup.py
+-----------------------
+
+Included with this application is a file named ``setup.py``.  It's possible to
+use this file to install this application to your system, by invoking the
+following command::
+
+    sudo python setup.py install
+
+Once that's done, you should be able to begin using application_manager at will.
+
+Installing via setuptools
+-------------------------
+
+If you have setuptools_ installed, you can simply run the following command
+to install application_manager::
+
+    sudo easy_install application_manager
+
+.. _setuptools: http://peak.telecommunity.com/DevCenter/setuptools

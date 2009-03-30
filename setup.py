@@ -20,9 +20,6 @@ Using django-application-manager
 1. Install as application_manager in your Django apps directory.
 2. Do database stuff     
 
-TODO
-====
-1. Finish these docs
 
 """
  

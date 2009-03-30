@@ -1,0 +1,44 @@
+How to use django-application-manager
+---------------------------------------
+
+``django-application-manager`` empowers your users by allowing for easy adding and removing of user access to applications inside of Django. This doesn't remove or delete data, but rather exposes and hides functionality.
+
+There are really 5 steps to setting it up with your projects (not including 
+installation, which is covered in INSTALL.txt in this same directory.)
+
+1. List this application in the ``INSTALLED_APPS`` portion of your settings
+   file.  Your settings file might look something like::
+   
+       INSTALLED_APPS = (
+           # ...
+           'application_manager',
+       )
+
+2. Modify your project urls.py file to include the Application Manager url::
+
+        urlpatterns = patterns('',
+            # ...
+            (r'^applications/', include('application_manager.urls')),
+        )
+        
+3. Update your database in the standard Django way::
+
+        $ python manage.py syncdb
+        
+4. In the Django admin, under Application Manager, add an Application. The Application admin model interface has extensive documentation and examples. The current examples use Pinax Blogs and Bookmarks, but you should be able to  infer other possibilities by following how these are described.
+
+5. Add these lines to your calling view::
+
+        # Calling the application manager get_applications view 
+        from application_manager.views import get_applications   
+        
+        # Add a list of applications to your response
+        response_dictionary['applications'] =  get_applications(request)
+        return render_to_response(
+            'my_profile_template.html', 
+            response_dictionary, 
+            context_instance=RequestContext(request))
+        
+6. Add an include to the called template::
+    
+        {% include "application_manager/applications.html" %}
