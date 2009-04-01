@@ -3,14 +3,15 @@
 
 {% endcomment %}
 
+
 <div class="ApplicationManager">
     <dl>
     {% for app in applications %}
         <dt style="{% if app.activated %}font-weight: bold;{% endif %}">
             {% if app.activated %}
-                <a href="{% url application_deactivate app.id %}?next={{ request.path }}">disable</a>
+                <a href="{% url application_deactivate app.id %}?next={{ next }}">disable</a>
             {% else %}
-                <a href="{% url application_activate app.id %}?next={{ request.path }}">enable</a>            
+                <a href="{% url application_activate app.id %}?next={{ next }}">enable</a>            
             {% endif %}
             <a href="{{ app.url_name }}">{{ app.title }}</a>
         </dt>
