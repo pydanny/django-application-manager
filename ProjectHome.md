@@ -1,0 +1,1 @@
+This was originally created for Pinax, but I've kept things as loosely coupled to other modules as possible. It should work with other Django efforts, but so far it only has been tested against Pinax.
